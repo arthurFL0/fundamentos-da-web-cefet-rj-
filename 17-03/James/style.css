@@ -39,6 +39,15 @@ header h1{
     font-size: 1.8rem;
 }
 
+header .menu li a{
+    color: white;
+    transition: font-size 1s;
+}
+
+header .menu li a:hover{
+   font-size: 1.25rem;
+}
+
 .azule{
     background-color: rgb(204,236,255);
     color: black;
