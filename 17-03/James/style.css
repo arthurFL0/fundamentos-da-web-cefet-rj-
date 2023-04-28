@@ -154,3 +154,16 @@ header{
     font-size: 0.8rem;
     line-height: 1.5em;
 }
+
+@media(max-width:576px){
+
+   
+}
+
+@media(min-width: 577px) and (max-width:768px){
+
+}
+
+@media(min-width:769px){
+
+}
