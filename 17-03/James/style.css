@@ -29,7 +29,6 @@ header,main,footer{
 
 .box{
     background-color: rgb(0,98,153);
-    width: 286px;
     padding: 10px 15px;
     margin: 10px 5px;
     box-sizing: border-box;
@@ -115,14 +114,18 @@ header{
 .portifolio{
     display: flex;
     flex-wrap: nowrap;
-    flex-grow: 0;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .motivacao{
     display: flex;
     flex-direction: row;
+}
+
+
+.hambu{
+    display: none;
 }
 
 .col-2{
@@ -155,12 +158,76 @@ header{
     line-height: 1.5em;
 }
 
+
 @media(max-width:576px){
 
+    .portifolio{
+        flex-direction: column;
+    }
    
+    main,header,footer{
+        width: unset;
+        margin: unset;
+    }
+
+    header,footer{
+        padding: 0px 20px;
+    }
+
+
+    .motivacao{
+        flex-wrap: wrap;
+    }
+
+    .col-1{
+        width: 100%;
+    }
+
+    .col-2{
+        width: 100%;
+    }
+
+    .menu{
+        display: none;
+    }
+
+    .hambu{
+        display: inline;
+    }
 }
 
-@media(min-width: 577px) and (max-width:768px){
+@media(min-width: 577px) and (max-width:861px){
+    .portifolio{
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .box{
+        width: 48%;
+        margin: unset;
+    }
+
+    .box:last-child{
+        width: 100%;
+    }
+
+    main,header,footer{
+        width: unset;
+        margin: unset;
+    }
+
+    header,footer{
+        padding: 0px 20px;
+
+    }
+
+    .menu{
+        display: none;
+    }
+
+    .hambu{
+        display: inline;
+    }
 
 }
 
