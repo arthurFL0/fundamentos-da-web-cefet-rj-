@@ -6,30 +6,34 @@ body{
     margin: 0px;
 }
 
-.bola{
+#gato{
     width: 25rem;
+    height: 25rem;
+    display: none;
+    transition: "opacity 0.25s ease";
+    opacity: 0;
+}
+
+
+#salute{
+    width: 5rem;
+    height: 5rem;
+    display: none;
+    margin-left: 15px;
+}
+
+.txt-holder{
+    display: flex;
+    align-items: center;
+}
+
+#btn{
+      width: 25rem;
     height: 25rem;
     background-color: red;
     border-radius: 20rem;
     align-items: center;
-    transition: width 5s;
-    transition: height 5s;
-
 }
-
-.bola-holder{
-    
-}
-
-
-
-
-.bola:hover{
-    width: 0rem;
-    height: 0rem;
-}
-
-
 
 
 .main{
