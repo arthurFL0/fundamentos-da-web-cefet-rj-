@@ -434,7 +434,7 @@ const retornaGeneros = arrG => {
         generos += gen+", "
     })
 
-    return `<p class="generos"> ${generos}</p>`
+    return `<p class="generos"> ${generos.substring(0,generos.length - 2)}</p>`
 }
 
 const retornaElenco = arrE =>{
@@ -459,7 +459,7 @@ const retornaTitulos = (similares,arrayDados) => {
     let titulos = ""
     similares.forEach((similar)=>{
         let index = similar - 1
-        titulos +=`<span ><img class="icon-similar" src=${arrayDados[index].figura}></span>`
+        titulos +=`<a href=${"#id"+similar}><span><img class="icon-similar" src=${arrayDados[index].figura}></span></a>`
     })
 
     return titulos
@@ -481,30 +481,31 @@ const retornaClassificacao = classificacao =>{
 
 
 dados.forEach((obj)=>{
-    listaFilmes.innerHTML += `<li class="item-filme">
-    <div class="superior">
-        <div class="img-holder">
-            <img src=${obj.figura}>
-        </div>
-        <div class="superior-info">
-            <h2>${obj.titulo}</h2>
-                ${retornaGeneros(obj.generos)}
-            <div class="info-elenco">
-                ${retornaElenco(obj.elenco)}
+    listaFilmes.innerHTML += 
+    `<li id=${"id"+obj.id} class="item-filme">
+        <div class="superior">
+            <div class="img-holder">
+                <img src=${obj.figura}>
             </div>
+            <div class="superior-info">
+                <h2>${obj.titulo}</h2>
+                    ${retornaGeneros(obj.generos)}
+                <div class="info-elenco">
+                    ${retornaElenco(obj.elenco)}
+                </div>
+            </div>
+            <span class="classificacao">
+                ${retornaClassificacao(obj.classificacao)}
+            </span>
         </div>
-        <span class="classificacao">
-            ${retornaClassificacao(obj.classificacao)}
-        </span>
-    </div>
-    <div class="rating">
-        ${retornaEstrelas(obj.opinioes[0].rating)}
-    </div>
-    <p>${obj.resumo}</p>
-    <div class="similares">
-        <h3>Titulos similares</h3>
-        ${retornaTitulos(obj.titulosSemelhantes,dados)}
-    </div>
+        <div class="rating">
+            ${retornaEstrelas(obj.opinioes[0].rating)}
+        </div>
+        <p>${obj.resumo}</p>
+        <div class="similares">
+            <h3>Titulos similares</h3>
+            ${retornaTitulos(obj.titulosSemelhantes,dados)}
+        </div>
     </li>
     `
 })
