@@ -19,3 +19,6 @@ $(function(){
         }
     })
 })
+
+//JQUERY É INTERESSANTE PARA MANIPULAR O DOM
+//VER O CODIGO DO SCALFONI 
